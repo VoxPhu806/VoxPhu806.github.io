@@ -1,5 +1,115 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Chừa chỗ cho thanh điều hướng cố định khi cuộn tới section */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+/* ---------- Navbar ---------- */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: #2dd4bf;
+  transition: width 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #2dd4bf;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+#navbar {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+#navbar.scrolled {
+  background-color: rgb(23 23 23 / 0.9);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+}
+
+/* ---------- Hiệu ứng khi bấm ---------- */
+.nav-link.pop {
+  animation: link-pop 0.4s ease-out;
+}
+@keyframes link-pop {
+  0%   { scale: 1; }
+  35%  { scale: 0.88; }
+  70%  { scale: 1.12; }
+  100% { scale: 1; }
+}
+
+.ripple-dot {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.55);
+  transform: scale(0);
+  pointer-events: none;
+  animation: ripple 0.6s ease-out forwards;
+}
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+.title-flash {
+  animation: title-flash 0.7s ease-out;
+}
+@keyframes title-flash {
+  0%   { scale: 1; }
+  40%  { scale: 1.08; }
+  100% { scale: 1; }
+}
+
+/* Menu mobile xổ xuống, các mục hiện lần lượt */
+#mobile-menu:not(.hidden) {
+  animation: menu-in 0.3s ease-out;
+}
+#mobile-menu:not(.hidden) li {
+  opacity: 0;
+  animation: item-in 0.35s ease-out forwards;
+}
+#mobile-menu:not(.hidden) li:nth-child(1) { animation-delay: 0.05s; }
+#mobile-menu:not(.hidden) li:nth-child(2) { animation-delay: 0.10s; }
+#mobile-menu:not(.hidden) li:nth-child(3) { animation-delay: 0.15s; }
+#mobile-menu:not(.hidden) li:nth-child(4) { animation-delay: 0.20s; }
+#mobile-menu:not(.hidden) li:nth-child(5) { animation-delay: 0.25s; }
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes item-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Người dùng tắt chuyển động: luôn để cuối file */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
