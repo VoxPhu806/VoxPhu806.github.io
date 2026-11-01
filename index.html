@@ -3,13 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoxPhu806 Portfolio</title>
+  <title>Vo Xuan Phu | Web Developer</title>
+
+  <!-- SEO meta tags -->
+  <meta name="title" content="Vo Xuan Phu | Web Developer" />
+  <meta name="description" content="Hi, my name is Vo Xuan Phu. I'm a Web Developer." />
+  <meta name="keywords" content="web, developer, portfolio" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="author" content="Vo Xuan Phu" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Vo Xuan Phu | Web Developer" />
+  <meta property="og:url" content="https://voxphu806.github.io/" />
+  <meta property="og:image" content="https://voxphu806.github.io/banner.jpg" />
+  <meta name="twitter:title" content="Vo Xuan Phu | Web Developer" />
+  <meta name="twitter:description" content="Hi, my name is Vo Xuan Phu. I'm a Web Developer." />
+  <meta name="twitter:image" content="https://voxphu806.github.io/banner.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 
-  <div class="flex flex-row justify-center items-center p-12">
-    <h1 class="text-5xl text-green-300 animate-bounce">Hello, Tailwind CSS</h1>
-  </div>
+  <!-- banner -->
+  <section
+    class="min-h-screen w-full flex flex-col justify-center items-center bg-[url('/banner.jpg')] bg-cover bg-center bg-black/50 bg-blend-multiply">
+    <div class="w-full lg:w-[80%] p-12 text-white">
+      <h1 class="banner-text text-5xl lg:text-6xl font-bold mb-10 grid grid-cols-1 gap-2 lg:gap-5">
+        <span>Hi, my name is <span class="text-teal-400">Vo Xuan Phu</span></span>
+        <span>I'm the Web Developer.</span>
+      </h1>
+      <a href="#about-me"
+        class="banner-cta inline-block uppercase border-2 border-teal-400 p-3 transition-all duration-300 hover:bg-teal-400 hover:text-white hover:-translate-y-1 cursor-pointer">
+        <span class="text-xl px-8 py-3 font-light">Know more</span>
+      </a>
+    </div>
+  </section>
+  <!-- banner ./ -->
+
+  <!-- about me -->
+  <section id="about-me"
+    class="bg-teal-400 min-h-screen w-full flex flex-col justify-center items-center p-4 lg:p-12 text-white">
+    <div class="w-full lg:w-[60%] mb-5">
+      <h2 class="section-title uppercase text-2xl lg:text-5xl text-center font-bold text-white mb-12">About Me</h2>
+      <div class="section-content grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-3">
+        <div class="flex justify-center items-center text-center col-span-1">
+          <img class="object-cover max-w-xs w-full rounded-2xl shadow-xl transition duration-500 hover:scale-105"
+            src="/avatar.jpg" title="My avatar" alt="My avatar" />
+        </div>
+        <div class="col-span-1 lg:col-span-2 flex justify-center items-center">
+          <div class="p-0 text-center lg:p-8 lg:text-start">
+            <p class="pb-3 text-lg font-light mb-5">
+              Mình là Vo Xuan Phu, yêu thích lập trình web và phát triển ứng dụng.
+              Mục tiêu của mình là trở thành lập trình viên giỏi, nắm vững kiến trúc phần mềm
+              và các công nghệ hiện đại.
+            </p>
+            <a href="#" target="_blank"
+              class="inline-block uppercase border-2 border-white p-3 text-white transition-all duration-300 hover:bg-white hover:text-teal-400 hover:-translate-y-1 cursor-pointer">
+              <span class="text-xl px-8 py-3 font-normal">View My CV</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about me ./ -->
+
+  <!-- contact -->
+  <section id="contact"
+    class="bg-white min-h-[500px] w-full flex flex-col justify-center items-center p-6 lg:p-12 text-gray-800">
+    <div class="w-full lg:w-[60%] mb-5">
+      <h2 class="section-title uppercase text-2xl lg:text-5xl text-center font-bold mb-6">Contact</h2>
+      <p class="section-content flex flex-col justify-center items-center pt-5 pb-5 text-center">
+        <span class="text-2xl text-teal-500 mb-3">I LOOK FORWARD TO WORKING WITH YOU</span>
+        <span>I'm so happy that my skills might bring value to you. Let's connect for work.</span>
+      </p>
+    </div>
+    <a href="mailto:EMAIL-CUA-BAN@gmail.com?subject=Hi, I want to connect with you for work&body=Please describe your work or project requirements"
+      class="border-2 border-teal-400 px-8 py-3 bg-teal-400 text-white transition-all duration-300 hover:bg-white hover:text-teal-400 hover:-translate-y-1 cursor-pointer">
+      <span class="text-xl uppercase font-light">Send An Email Now</span>
+    </a>
+  </section>
+  <!-- contact ./ -->
+
+  <!-- footer -->
+  <footer class="bg-neutral-900 min-h-[300px] py-12 flex flex-row justify-center items-center">
+    <div class="w-[60%] flex flex-col justify-center items-center">
+      <ul class="flex flex-row">
+        <li class="px-4 cursor-pointer transition duration-300 hover:-translate-y-2">
+          <a href="https://twitter.com/" target="_blank">
+            <img class="w-10 grayscale transition duration-300 hover:grayscale-0" src="/imgs/twitter.svg" alt="Twitter" />
+          </a>
+        </li>
+        <li class="px-4 cursor-pointer transition duration-300 hover:-translate-y-2">
+          <a href="https://www.linkedin.com/" target="_blank">
+            <img class="w-10 grayscale transition duration-300 hover:grayscale-0" src="/imgs/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </li>
+        <li class="px-4 cursor-pointer transition duration-300 hover:-translate-y-2">
+          <a href="https://github.com/VoxPhu806" target="_blank">
+            <img class="w-10 grayscale transition duration-300 hover:grayscale-0" src="/imgs/github.svg" alt="GitHub" />
+          </a>
+        </li>
+      </ul>
+      <hr class="w-1/2 border-gray-500 mt-10" />
+      <p class="text-lg text-gray-500 mt-5">©2026 - Vo Xuan Phu</p>
+    </div>
+  </footer>
+  <!-- footer ./ -->
 
   <script type="module" src="/src/scripts/application.js"></script>
 </body>
